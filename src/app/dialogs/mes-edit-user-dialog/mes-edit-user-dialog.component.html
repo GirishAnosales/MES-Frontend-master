@@ -1,0 +1,55 @@
+<div class="header">
+    <h6 class="h6" mat-dialog-title>Edit User <strong>({{userData.username}})</strong></h6>
+    <button class="mat-stroked-button" (click)="toggleEdit()" mat-stroked-button>{{ edit ? 'Cancel Edit' : 'Edit'
+        }}</button>
+</div>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-content class="mat-dialog-content">
+    <form class="form" [formGroup]="editUserForm">
+        <div class="row r1">
+            <div class="col-lg-6 r1c1">
+                <mat-form-field class="mat-form-field">
+                    <mat-label class="mat-label">Username</mat-label>
+                    <input class="input" type="text" matInput formControlName="username">
+                </mat-form-field>
+                <mat-form-field class="mat-form-field">
+                    <mat-label class="mat-label">Badge Number</mat-label>
+                    <input class="input" type="text" matInput formControlName="badgeNumber">
+                </mat-form-field>
+                <mat-form-field class="mat-form-field">
+                    <mat-label class="mat-label">Group Name</mat-label>
+                    <input class="input" type="text" matInput formControlName="groupName">
+                </mat-form-field>
+                <mat-form-field class="mat-form-field">
+                    <mat-label class="mat-label">Badge Number</mat-label>
+                    <input class="input" type="text" matInput formControlName="badgeNumber">
+                </mat-form-field>
+            </div>
+            <div class="col-lg-6 r1c2">
+                <table class="table">
+                    <tr class="tr">
+                        <th class="th">Title</th>
+                        <th class="th">Data</th>
+                    </tr>
+                    <tr class="tr">
+                        <td class="td">Created Date</td>
+                        <td class="td">{{userData.createdAt}}</td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="td">Created By</td>
+                        <td class="td">{{userData.createdBy}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-actions class="mat-dialog-actions">
+    <button class="mat-stroked-button" mat-stroked-button [mat-dialog-close]="'cancel'">Cancel</button>
+    <button class="mat-stroked-button" *ngIf="edit" mat-stroked-button (click)="updateGroup()">Update</button>
+</mat-dialog-actions>

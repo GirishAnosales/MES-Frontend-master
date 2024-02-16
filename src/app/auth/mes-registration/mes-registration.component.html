@@ -1,0 +1,62 @@
+<div class="container-fluid home">
+    <div class="row r1">
+        <div class="col-sm-12 r1c1">
+            <mat-card class="mat-card">
+
+                <mat-card-header class="mat-card-header">
+                    <mat-card-title class="mat-card-title">Create Admin</mat-card-title>
+                </mat-card-header>
+
+                <mat-divider class="mat-divider"></mat-divider>
+
+                <mat-card-content class="mat-card-content">
+                    <form class="login-form" [formGroup]="registrationForm">
+                        <mat-form-field class="mat-form-field">
+                            <mat-label class="mat-label">Username</mat-label>
+                            <input class="input" type="email" matInput formControlName="username">
+                            <mat-error class="mat-error"
+                                *ngIf="username?.hasError('email') && !username?.hasError('required')">
+                                Please enter a <strong>valid</strong> email address.
+                            </mat-error>
+                            <mat-error class="mat-error" *ngIf="username?.hasError('required')">
+                                Email is <strong>required.</strong>
+                            </mat-error>
+                            <!-- <mat-error class="mat-error" *ngIf="exists">
+                                User already <strong>exists.</strong>
+                            </mat-error> -->
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-form-field">
+                            <mat-label class="mat-label">Password</mat-label>
+                            <input class="input" type="password" matInput formControlName="password">
+                            <mat-error class="mat-error" *ngIf="password?.hasError('required')">
+                                Password is <strong>required.</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-form-field">
+                            <mat-label class="mat-label">Badge Number</mat-label>
+                            <input class="input badge-number" type="text" matInput formControlName="badgeNumber">
+                            <mat-error class="mat-error" *ngIf="badgeNumber?.hasError('required')">
+                                Badge Number is <strong>required.</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <!-- <mat-form-field class="mat-form-field">
+                            <mat-label class="mat-label">Group Name</mat-label>
+                            <input class="input" type="text" matInput formControlName="groupName">
+                            <mat-error class="mat-error" *ngIf="groupName?.hasError('required')">
+                                Group Name is <strong>required.</strong>
+                            </mat-error>
+                        </mat-form-field> -->
+
+                        <div class="button-group">
+                            <button class="mat-raised-button" type="submit" (click)="onSubmit()"
+                                mat-raised-button>Create</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

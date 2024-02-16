@@ -1,0 +1,44 @@
+<h6 class="h6" mat-dialog-title>Edit Group <strong>({{groupData.groupName}})</strong></h6>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-content class="mat-dialog-content">
+    <form class="form" [formGroup]="editGroupForm">
+        <mat-form-field class="mat-form-field">
+            <mat-label class="mat-label">Group Name</mat-label>
+            <input class="input" type="text" matInput formControlName="groupName">
+        </mat-form-field>
+        <mat-form-field class="mat-form-field">
+            <mat-label class="mat-label">Group Description</mat-label>
+            <input class="input" type="text" matInput formControlName="groupDescription">
+        </mat-form-field>
+        <div class="row r1">
+            <div class="col-sm-6 r1c1">
+                <mat-checkbox class="mat-checkbox" formControlName="canRead">Read Instructions</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canCreateInstructions">Create
+                    Instructions</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canEditInstructions">Edit
+                    Instructions</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canDeleteInstructions">Delete
+                    Instructions</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canCreateUser">Create User</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canEditUser">Edit User</mat-checkbox>
+            </div>
+            <div class="col-sm-6 r1c2">
+                <mat-checkbox class="mat-checkbox" formControlName="canDeleteUser">Delete User</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canCreateGroup">Create Group</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canEditGroup">Edit Group</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canDeleteGroup">Delete Group</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canNeedAdminApproval">Need Admin
+                    Approval</mat-checkbox>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-actions class="mat-dialog-actions">
+    <button class="mat-stroked-button" mat-stroked-button [mat-dialog-close]="'cancel'">Cancel</button>
+    <button class="mat-stroked-button" mat-stroked-button (click)="updateGroup()">Update</button>
+</mat-dialog-actions>

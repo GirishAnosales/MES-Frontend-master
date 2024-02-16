@@ -1,0 +1,57 @@
+<div class="container-fluid home">
+    <div class="row r1">
+        <div class="col-sm-12 r1c1">
+
+            <mat-toolbar class="mat-toolbar">
+                <mat-toolbar-row class="mat-toolbar-row mtr1">
+                    <button class="button" type="button" aria-label="Toggle sidenav" mat-icon-button
+                        (click)="drawer.toggle()">
+                        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                    </button>
+
+                    <h1 class="h1">MES</h1>
+
+                    <span class="spacer"></span>
+
+                    <button class="mat-icon-button" [matMenuTriggerFor]="menu" mat-icon-button>
+                        <mat-icon class="mat-icon">account_circle</mat-icon>
+                    </button>
+                    <!-- MENU -->
+                    <mat-menu class="mat-menu" #menu="matMenu">
+                        <mat-divider class="mat-divider"></mat-divider>
+                        <h6 class="h6" style="padding: 0.5rem;">{{username}}</h6>
+                        <mat-divider class="mat-divider"></mat-divider>
+                        <button class="mat-menu-item" matTooltip="Logout" matTooltipClass="mat-menu-item-tooltip"
+                            (click)="logout()" mat-menu-item>
+                            <mat-icon class="mat-icon"
+                                style="font-size: 1rem;display: flex; justify-content: center; align-items: center;">logout</mat-icon>
+                            <span class="span" style="font-size: 1rem;">Logout</span>
+                        </button>
+                        <mat-divider class="mat-divider"></mat-divider>
+                    </mat-menu>
+                </mat-toolbar-row>
+                <mat-toolbar-row class="mat-toolbar-row mtr2">
+                    <div class="breadcrumbs">
+                        {{ breadcrumbsService.breadcrumbs | join: ' / ' }}
+                    </div>
+                </mat-toolbar-row>
+            </mat-toolbar>
+
+            <mat-sidenav-container class="mat-sidenav-container">
+                <mat-sidenav #drawer class="mat-sidenav" [attr.role]="(isSmall | async) ? 'dialog' : 'navigation'"
+                    opened fixedInViewport fixedTopGap="96" [mode]="(isSmall | async) ? 'over' : 'side'">
+                    <mat-nav-list class="mat-nav-list">
+                        <app-mes-manage-groups-and-instructions-sidenav
+                            [username]="username"></app-mes-manage-groups-and-instructions-sidenav>
+                    </mat-nav-list>
+                </mat-sidenav>
+
+                <!-- MAT SIDE NAV CONTENT -->
+
+                <mat-sidenav-content class="mat-sidenav-content">
+                    <router-outlet></router-outlet>
+                </mat-sidenav-content>
+            </mat-sidenav-container>
+        </div>
+    </div>
+</div>

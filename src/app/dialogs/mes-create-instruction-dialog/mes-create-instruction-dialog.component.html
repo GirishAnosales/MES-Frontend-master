@@ -1,0 +1,29 @@
+<h1 class="h1" mat-dialog-title>Create Project</h1>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-content class="mat-dialog-content">
+    <form class="form" [formGroup]="createProjectForm">
+        <mat-form-field class="mat-form-field">
+            <mat-label class="mat-label">Project Name</mat-label>
+            <input class="input project-name" maxlength="25" type="text" matInput formControlName="projectName">
+            <mat-error class="mat-error" *ngIf="projectName?.hasError('required')">
+                Project name is <strong>required.</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mat-form-field">
+            <mat-label class="mat-label">Project Description</mat-label>
+            <input class="input" maxlength="100" type="text" matInput formControlName="projectDescription">
+            <mat-error class="mat-error" *ngIf="projectDescription?.hasError('required')">
+                Project description is <strong>required.</strong>
+            </mat-error>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-actions class="mat-dialog-actions">
+    <button class="mat-stroked-button" mat-stroked-button [mat-dialog-close]="'cancel'">Cancel</button>
+    <button class="mat-stroked-button" mat-stroked-button (click)="createProject()">Create</button>
+</mat-dialog-actions>

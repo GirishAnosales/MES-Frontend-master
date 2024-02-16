@@ -1,0 +1,9 @@
+<div class="container-fluid home">
+	<div class="row r1">
+		<h4 class="h4">Dashboard</h4>
+		<mat-divider class="mat-divider"></mat-divider>
+		<div class="col-sm-3 r1c1" *ngFor="let button of buttons">
+			<button class="mat-button" [routerLink]="button.routerlink" mat-flat-button>{{button.name}}</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+<div class="container-fluid home">
+    <div class="row r1">
+        <div class="col-sm-12 r1c1">
+            <mat-card class="mat-card">
+                <mat-progress-bar class="mat-progress-bar" mode="indeterminate" *ngIf="isLoggingIn"></mat-progress-bar>
+                <mat-card-header class="mat-card-header">
+
+                    <mat-card-title class="mat-card-title">Login</mat-card-title>
+                </mat-card-header>
+
+                <mat-divider class="mat-divider"></mat-divider>
+
+                <mat-card-content class="mat-card-content">
+                    <form class="login-form" [formGroup]="loginForm">
+                        <mat-form-field class="mat-form-field">
+                            <mat-label class="mat-label">Username</mat-label>
+                            <input class="input" type="text" matInput formControlName="username">
+                            <mat-error class="mat-error"
+                                *ngIf="username?.hasError('username') && !username?.hasError('required')">
+                                Please enter a valid username
+                            </mat-error>
+                            <mat-error class="mat-error" *ngIf="username?.hasError('required')">
+                                Username is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-form-field">
+                            <mat-label class="mat-label">Password</mat-label>
+                            <input class="input" type="password" matInput formControlName="password">
+                            <mat-error class="mat-error" *ngIf="password?.hasError('required')">
+                                Password is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <div class="button-group">
+                            <button class="mat-raised-button" type="submit" (click)="onSubmit()"
+                                mat-raised-button>Login</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

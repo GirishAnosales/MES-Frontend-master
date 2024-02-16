@@ -1,0 +1,33 @@
+$custom-blue-palette: (
+    50: #e3f1f8,
+    100: #badcef,
+    200: #91c7e5,
+    300: #6ab1db,
+    400: #4da1d5,
+    500: #3192cf,
+    600: #2785c3,
+    700: #1b74b1,
+    800: #1163a0,
+    900: #004781,
+    contrast: (50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: white,
+        400: white,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white)
+);
+
+$blue50: #e3f1f8;
+$blue100: #badcef;
+$blue200: #91c7e5;
+$blue300: #6ab1db;
+$blue400: #4da1d5;
+$blue500: #3192cf;
+$blue600: #2785c3;
+$blue700: #1b74b1;
+$blue800: #1163a0;
+$blue900: #004781;

@@ -1,0 +1,96 @@
+@import '../../../assets/styles/theme.scss';
+
+@media screen and (min-width:0px) {
+    .home {
+        background-color: $primary14;
+
+        .r1 {
+            min-height: 100vh;
+            height: 100%;
+
+            .r1c1 {
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+
+                .mat-card {
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    align-items: center;
+                    margin-bottom: 4rem;
+                    background-color: $primary13;
+                    box-shadow: 0px 0px 0px 0px $primary11;
+                    border: 2px solid $primary11;
+                    border-radius: 0.5rem;
+                    overflow: hidden;
+
+                    .mat-card-header {
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
+                        align-items: center;
+                        width: 100%;
+                        padding: 1rem;
+                        border-bottom: 1px solid $primary11;
+
+                        .mat-card-title {
+                            font-size: 24px;
+                        }
+                    }
+
+                    .mat-divider {
+                        border-top: 1px solid $primary11;
+                    }
+
+                    .mat-card-content {
+                        padding: 2rem;
+
+                        .login-form {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-content: center;
+                            width: max-content;
+
+                            .mat-form-field {
+                                padding: 0.5rem 0;
+
+                                .mat-label,
+                                .mat-error {
+                                    font-size: small;
+                                }
+                            }
+
+                            .button-group {
+                                text-align: center;
+                                padding: 1rem 0;
+
+                                .mat-raised-button {
+                                    font-size: small;
+                                    border-radius: 0.5rem;
+                                    padding: 0 2rem;
+                                    background-color: $primary6;
+                                    color: $primary14;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:425px) {
+    .home {
+        .r1 {
+            .r1c1 {
+                .mat-card {
+                    width: 350px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+<h6 class="h6" mat-dialog-title>Edit Project <strong>({{projectData.projectName}})</strong></h6>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-content class="mat-dialog-content">
+    <form class="form" [formGroup]="editProjectForm">
+        <mat-form-field class="mat-form-field">
+            <mat-label class="mat-label">Project Name</mat-label>
+            <input class="input" type="text" matInput formControlName="projectName">
+        </mat-form-field>
+        <mat-form-field class="mat-form-field">
+            <mat-label class="mat-label">Project Description</mat-label>
+            <input class="input" type="text" matInput formControlName="projectDescription">
+        </mat-form-field>
+        <div class="row r1">
+            <div class="col-sm-6 r1c1">
+                <mat-checkbox class="mat-checkbox" formControlName="needAdminApproval">Need Admin
+                    Approval</mat-checkbox>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-actions class="mat-dialog-actions">
+    <button class="mat-stroked-button" mat-stroked-button [mat-dialog-close]="'cancel'">Cancel</button>
+    <button class="mat-stroked-button" mat-stroked-button (click)="updateProject()">Update</button>
+</mat-dialog-actions>

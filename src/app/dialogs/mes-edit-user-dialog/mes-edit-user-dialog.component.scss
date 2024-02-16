@@ -1,0 +1,88 @@
+@import '../../../assets/styles/theme.scss';
+
+@media screen and (min-width:0px) {
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+
+        .h6 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+
+        .mat-stroked-button {
+            font-size: small;
+        }
+    }
+
+    .mat-dialog-content {
+        font-family: Outfit;
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s;
+
+            .mat-form-field {
+                padding-bottom: 1rem;
+
+                .mat-label {
+                    font-size: 0.8rem;
+                }
+
+                .mat-error {
+                    font-size: 0.7rem;
+                }
+            }
+
+            .r1 {
+
+                .r1c1,
+                .r1c2 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    .mat-checkbox {
+                        font-size: small;
+                    }
+
+                    .table {
+                        border: 1px solid $lightBorder;
+                        padding: 1rem !important;
+
+                        .tr {
+                            .th {
+                                text-align: center;
+                                text-decoration: underline;
+                            }
+
+                            .th,
+                            .td {
+                                width: 100%;
+                                padding: 1rem;
+                                border-bottom: 1px solid $lightBorder;
+                                border-right: 1px solid $lightBorder;
+                                font-size: small;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mat-dialog-actions {
+
+
+        .mat-stroked-button {
+            font-size: small;
+        }
+    }
+}

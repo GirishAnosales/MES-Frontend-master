@@ -1,0 +1,72 @@
+@import '../../../../assets/styles/theme.scss';
+
+.home {
+    .r1 {
+        .r1c1 {
+            padding: 1rem 0;
+
+            .mat-card {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                box-shadow: none;
+
+                .title {
+                    width: 29%;
+                    padding: 0.5rem;
+                    border: 2px solid $primary11;
+                    text-indent: 2rem;
+                    margin: 0.5rem !important;
+                    font-size: small;
+                }
+
+                .data {
+                    width: 69%;
+                    padding: 0.5rem;
+                    border: 2px solid $primary11;
+                    background-color: $primary12;
+                    text-indent: 2rem;
+                    margin: 0.5rem !important;
+                    font-size: small;
+                }
+            }
+        }
+    }
+
+    .r2 {
+        display: flex;
+        justify-content: space-between;
+
+        .r2c1,
+        .r2c2 {
+            padding: 1rem 0;
+
+            .mat-card {
+                box-shadow: none;
+                margin: 0.5rem !important;
+
+                .title {
+                    background-color: $primary12;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 2px solid $primary11;
+                    width: 100%;
+                    height: 70vh;
+                }
+
+                .description {
+                    background-color: $primary12;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 2px solid $primary11;
+                    height: 70vh;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    
+}

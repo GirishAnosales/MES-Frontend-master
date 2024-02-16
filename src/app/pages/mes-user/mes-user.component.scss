@@ -1,0 +1,25 @@
+@import '../../../assets/styles/theme.scss';
+
+.grid-container {
+    margin: 2rem;
+
+    .r1 {
+        .r1c1 {
+            position: fixed;
+            z-index: 5;
+            right: 1rem;
+            bottom: 2rem;
+            display: flex;
+            justify-content: flex-end;
+
+            .mat-raised-button {
+                margin-left: 1rem;
+            }
+
+            .next {
+                background-color: green;
+                color: $primary15;
+            }
+        }
+    }
+}

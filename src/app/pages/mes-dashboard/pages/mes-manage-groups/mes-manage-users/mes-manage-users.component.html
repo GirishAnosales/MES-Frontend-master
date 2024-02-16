@@ -1,0 +1,80 @@
+<div class="container-fluid home">
+    <div class="row r1">
+        <div class="col-lg-12 r1c2">
+            <button class="mat-icon-button" routerLink="/dashboard/manage-groups" mat-icon-button>
+                <mat-icon class="mat-icon">arrow_back</mat-icon>
+            </button>
+            <h4 class="h4">{{groupName}}/Users</h4>
+            <button class="mat-raised-button" (click)="openCreateUserDialog(groupName)" mat-raised-button>Create
+                User</button>
+        </div>
+
+        <mat-divider class="mat-divider"></mat-divider>
+
+         <!-- SUPER USERS -->
+         <div class="col-lg-3 r1c1" *ngFor="let user of superUserByGroupName">
+            <div class="button-wrap">
+
+                <button class="button-group" (click)="getUserName(user.superUsername)" mat-flat-button>
+                    <h6 class="h6">{{user.superUsername}}</h6>
+                </button>
+
+                <button class="mat-icon-button" matRipple [matMenuTriggerFor]="menu"
+                    aria-label="Example icon-button with a menu">
+                    <mat-icon class="mat-icon">more_horiz</mat-icon>
+                </button>
+
+                <mat-menu class="mat-menu" #menu="matMenu">
+                    <mat-divider class="mat-divider"></mat-divider>
+                    <mat-divider class="mat-divider"></mat-divider>
+                    <button (click)="openEditUserDialog(user)" mat-menu-item>
+                        <mat-icon class="mat-icon"
+                            style="font-size: large; display: flex; justify-content: center; align-items: center;">edit</mat-icon>
+                        <span style="font-size: small;">Edit User</span>
+                    </button>
+                    <mat-divider class="mat-divider"></mat-divider>
+                    <button [disabled]="true" [ngClass]="'delete-button'" mat-menu-item>
+                        <mat-icon class="mat-icon"
+                            style="font-size: large; display: flex; justify-content: center; align-items: center;">delete</mat-icon>
+                        <span style="font-size: small;">Delete User</span>
+                    </button>
+                    <mat-divider class="mat-divider"></mat-divider>
+                </mat-menu>
+
+            </div>
+        </div>
+
+        <!-- USERS -->
+        <div class="col-lg-3 r1c1" *ngFor="let user of userByGroupName">
+            <div class="button-wrap">
+
+                <button class="button-group" (click)="getUserName(user.username)" mat-flat-button>
+                    <h6 class="h6">{{user.username}}</h6>
+                </button>
+
+                <button class="mat-icon-button" matRipple [matMenuTriggerFor]="menu"
+                    aria-label="Example icon-button with a menu">
+                    <mat-icon class="mat-icon">more_horiz</mat-icon>
+                </button>
+
+                <mat-menu class="mat-menu" #menu="matMenu">
+                    <mat-divider class="mat-divider"></mat-divider>
+                    <mat-divider class="mat-divider"></mat-divider>
+                    <button (click)="openEditUserDialog(user)" mat-menu-item>
+                        <mat-icon class="mat-icon"
+                            style="font-size: large; display: flex; justify-content: center; align-items: center;">edit</mat-icon>
+                        <span style="font-size: small;">Edit User</span>
+                    </button>
+                    <mat-divider class="mat-divider"></mat-divider>
+                    <button (click)="openDeleteUserDialog(user.userId)" [ngClass]="'delete-button'" mat-menu-item>
+                        <mat-icon class="mat-icon"
+                            style="font-size: large; display: flex; justify-content: center; align-items: center;">delete</mat-icon>
+                        <span style="font-size: small;">Delete User</span>
+                    </button>
+                    <mat-divider class="mat-divider"></mat-divider>
+                </mat-menu>
+
+            </div>
+        </div>
+    </div>
+</div>

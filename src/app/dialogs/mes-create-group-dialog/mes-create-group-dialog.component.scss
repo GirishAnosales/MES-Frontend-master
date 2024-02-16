@@ -1,0 +1,54 @@
+@import '../../../assets/styles/theme.scss';
+
+@media screen and (min-width:0px) {
+
+    .h1 {
+        padding-bottom: 1.5rem;
+    }
+
+    .mat-dialog-content {
+        font-family: Outfit;
+
+        .form {
+            display: flex;
+            flex-direction: column;
+
+            .mat-form-field {
+                padding-bottom: 1rem;
+
+                .mat-label {
+                    font-size: 0.8rem;
+                }
+
+                .mat-error {
+                    font-size: 0.7rem;
+                }
+
+                .group-name{
+                    text-transform: uppercase;
+                }
+            }
+
+            .r1 {
+
+                .r1c1,
+                .r1c2 {
+                    display: flex;
+                    flex-direction: column;
+
+                    .mat-checkbox {
+                        font-size: small;
+                    }
+                }
+            }
+        }
+    }
+
+    .mat-dialog-actions {
+
+
+        .mat-stroked-button {
+            font-size: small;
+        }
+    }
+}

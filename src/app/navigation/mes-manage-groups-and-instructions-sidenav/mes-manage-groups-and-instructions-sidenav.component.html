@@ -1,0 +1,39 @@
+<div class="container-fluid home">
+    <div class="row r1">
+        <div class="col-sm-12 r1c1">
+            <h6 class="h6">{{username}}</h6>
+            <mat-divider class="mat-divider"></mat-divider>
+            <div class="button-groups">
+                <button class="mat-button" routerLink="/dashboard" mat-button>Dashboard</button>
+                <!-- <button class="mat-button" mat-button (click)="openCreateGroupDialog()">Create New
+                    Group</button> -->
+            </div>
+            <mat-divider class="mat-divider"></mat-divider>
+
+            <!-- <mat-accordion class="mat-accordion" *ngIf="!isEmpty">
+                <h6 class="h6">Groups</h6>
+                <mat-expansion-panel class="mat-expansion-panel" *ngFor="let group of groups"
+                    (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle>
+                    <mat-expansion-panel-header class="mat-expansion-panel-header" (click)="togglePanel(group)">
+                        <mat-panel-title class="mat-panel-title">
+                            {{ group.groupName }}
+                            <button class="mat-stroked-button" mat-stroked-button>Info</button>
+                            <mat-icon class="mat-icon">
+                                {{ group.expanded ? 'expand_less' : 'expand_more' }}
+                            </mat-icon>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="button-groups">
+                        <button class="mat-button" *ngIf="!isEmpty" mat-button (click)="openCreateUserDialog()">Create
+                            User</button>
+                    </div>
+                    <mat-menu class="mat-menu" #usersMenu="matMenu">
+                        <button class="mat-menu-item" mat-menu-item *ngFor="let user of group.users">
+                            {{ user.name }}
+                        </button>
+                    </mat-menu>
+                </mat-expansion-panel>
+            </mat-accordion> -->
+        </div>
+    </div>
+</div>

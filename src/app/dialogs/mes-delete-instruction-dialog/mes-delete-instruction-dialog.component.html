@@ -1,0 +1,18 @@
+<mat-progress-bar class="mat-progress-bar" mode="indeterminate" *ngIf="isDeleting"></mat-progress-bar>
+
+<h1 class="h1" mat-dialog-title>Delete Project</h1>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-content class="mat-dialog-content">
+    <ul class="ul">
+        <li class="li">Do you want to <strong>delete</strong> this project?</li>
+    </ul>
+</mat-dialog-content>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-actions class="mat-dialog-actions">
+    <button class="mat-stroked-button" color="warn" mat-raised-button (click)="deleteProject()">Yes</button>
+    <button class=" mat-stroked-button" mat-stroked-button [mat-dialog-close]="'cancel'">No</button>
+</mat-dialog-actions>

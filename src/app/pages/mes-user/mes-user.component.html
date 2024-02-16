@@ -1,0 +1,17 @@
+<div class="grid-container">
+    <mat-grid-list class="mat-grid-list" [cols]="matGridListCols" rowHeight="4rem">
+        <mat-tab-group class="mat-tab-group" mat-stretch-tabs="false" mat-align-tabs="start">
+            <mat-grid-tile class="mat-grid-tile" colspan="4">
+                <mat-tab class="mat-tab" [label]="tab" *ngFor="let tab of lotsOfTabs">
+                    <app-mes-user-data></app-mes-user-data>
+                </mat-tab>
+            </mat-grid-tile>
+        </mat-tab-group>
+    </mat-grid-list>
+    <div class="row r1">
+        <div class="col-sm-12 r1c1">
+            <button class="mat-raised-button abort" mat-raised-button color="warn">Abort</button>
+            <button class="mat-raised-button next" mat-raised-button>Next Step</button>
+        </div>
+    </div>
+</div>

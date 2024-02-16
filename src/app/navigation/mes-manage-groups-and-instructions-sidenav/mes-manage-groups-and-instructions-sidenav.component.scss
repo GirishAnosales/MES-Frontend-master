@@ -1,0 +1,90 @@
+@import '../../../assets/styles/theme.scss';
+
+@media screen and (min-width: 0px) {
+    .home {
+        min-width: 14rem;
+        width: 100%;
+
+        .r1 {
+            .r1c1 {
+                padding: 0;
+
+                .h6 {
+                    padding: 0.5rem;
+                    text-align: center;
+                }
+
+                .button-groups {
+                    padding: 1rem;
+
+                    .mat-button {
+                        width: 100%;
+                        padding: 0.5rem 1rem;
+                        font-size: small;
+                        display: flex;
+                        justify-content: flex-start;
+                        background-color: $primary12;
+                        border-radius: 2rem;
+                        margin: 0.5rem 0;
+                    }
+                }
+
+                .mat-accordion {
+                    .h6 {
+                        padding: 0.1rem 1.5rem;
+                        font-size: small;
+                        font-style: italic;
+                        border-top: 1px solid $lightBorder;
+                        border-bottom: 1px solid $lightBorder;
+                        color: $light-gray;
+                        background-color: $f7;
+                    }
+
+                    .mat-expansion-panel {
+                        box-shadow: 0px 0px 0px 0px $primary11;
+                        border-radius: 0;
+                        margin: 0;
+
+                        .mat-expansion-panel-header {
+                            background-color: $primary13;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 0;
+                            padding-left: 1.5rem;
+
+                            .mat-panel-title {
+                                display: flex;
+                                justify-content: space-between;
+                                font-size: small;
+                                margin: 0;
+
+                                .mat-stroked-button {
+                                    border-radius: 2rem;
+                                    padding: 0;
+                                    font-style: italic;
+                                    font-size: small;
+                                }
+                            }
+                        }
+
+                        .button-groups {
+                            padding: 0 1rem;
+
+                            .mat-button {
+                                width: 100%;
+                                padding: 0.5rem 1rem;
+                                font-size: small;
+                                display: flex;
+                                justify-content: flex-start;
+                                background-color: $primary12;
+                                border-radius: 2rem;
+                                margin: 0.5rem 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

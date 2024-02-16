@@ -1,0 +1,46 @@
+<h1 class="h1" mat-dialog-title>Create Group</h1>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-content class="mat-dialog-content">
+    <form class="form" [formGroup]="createGroupForm">
+        <mat-form-field class="mat-form-field">
+            <mat-label class="mat-label">Group Name</mat-label>
+            <input class="input group-name" type="text" maxlength="25" matInput formControlName="groupName">
+            <mat-error class="mat-error" *ngIf="groupName?.hasError('required')">
+                Group name is <strong>required.</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mat-form-field">
+            <mat-label class="mat-label">Group Description</mat-label>
+            <input class="input" maxlength="50" type="text" matInput formControlName="groupDescription">
+            <mat-error class="mat-error" *ngIf="groupDescription?.hasError('required')">
+                Group description is <strong>required.</strong>
+            </mat-error>
+        </mat-form-field>
+        <div class="row r1">
+            <div class="col-sm-6 r1c1">
+                <mat-checkbox class="mat-checkbox" formControlName="canRead">Read Instructions</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canCreateInstructions">Create Instructions</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canEditInstructions">Edit Instructions</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canDeleteInstructions">Delete Instructions</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canCreateUser">Create User</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canEditUser">Edit User</mat-checkbox>
+            </div>
+            <div class="col-sm-6 r1c2">
+                <mat-checkbox class="mat-checkbox" formControlName="canDeleteUser">Delete User</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canCreateGroup">Create Group</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canEditGroup">Edit Group</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="canDeleteGroup">Delete Group</mat-checkbox>
+                <mat-checkbox class="mat-checkbox" formControlName="accessBirthCertificate">Access Birth Certificate</mat-checkbox>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-actions class="mat-dialog-actions">
+    <button class="mat-stroked-button" mat-stroked-button [mat-dialog-close]="'cancel'">Cancel</button>
+    <button class="mat-stroked-button" mat-stroked-button (click)="createGroup()">Create</button>
+</mat-dialog-actions>

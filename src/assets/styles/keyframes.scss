@@ -1,0 +1,22 @@
+@keyframes fade-in {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes scale-in {
+    from {
+        // transform: scale(0%);
+        top: 60px;
+        // opacity: 0%;
+    }
+
+    to {
+        // transform: scale(100%);
+        // opacity: 100%;
+    }
+}

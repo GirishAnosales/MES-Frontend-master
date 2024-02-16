@@ -1,0 +1,37 @@
+<h1 class="h1" mat-dialog-title>Create User</h1>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-content class="mat-dialog-content">
+    <form class="form" [formGroup]="createUserForm">
+        <mat-form-field class="mat-form-field">
+            <mat-label class="mat-label">User Name</mat-label>
+            <input class="input" type="text" matInput formControlName="username">
+            <mat-error class="mat-error" *ngIf="username?.hasError('required')">
+                User name is <strong>required.</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mat-form-field">
+            <mat-label class="mat-label">Password</mat-label>
+            <input class="input" type="password" matInput formControlName="password">
+            <mat-error class="mat-error" *ngIf="password?.hasError('required')">
+                Password is <strong>required.</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mat-form-field">
+            <mat-label class="mat-label">Badge Number</mat-label>
+            <input class="input" type="text" matInput formControlName="badgeNumber">
+            <mat-error class="mat-error" *ngIf="badgeNumber?.hasError('required')">
+                Badge Number is <strong>required.</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-checkbox class="mat-checkbox" formControlName="isApprover">Is Approver</mat-checkbox>
+    </form>
+</mat-dialog-content>
+
+<mat-divider class="mat-divider"></mat-divider>
+
+<mat-dialog-actions class="mat-dialog-actions">
+    <button class="mat-stroked-button" mat-stroked-button [mat-dialog-close]="'cancel'">Cancel</button>
+    <button class="mat-stroked-button" mat-stroked-button (click)="createUser()">Create</button>
+</mat-dialog-actions>

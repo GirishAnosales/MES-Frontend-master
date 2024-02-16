@@ -1,0 +1,46 @@
+<div class="container-fluid home">
+    <div class="row r1">
+        <div class="col-sm-11 r1c1">
+            <mat-form-field class="mat-form-field">
+                <mat-label class="mat-label">Character Number</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-11 r1c2">
+            <mat-form-field class="mat-form-field">
+                <mat-label class="mat-label">Character Combo</mat-label>
+                <input (input)="onInputChange($event)" matInput>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-11 r1c3">
+            <mat-form-field class="mat-form-field">
+                <mat-label class="mat-label">Station Name</mat-label>
+                <input (input)="onInputChange($event)" matInput>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row r2">
+        <div class="col-sm-7 r2c1">
+            <mat-card class="mat-card">
+                <input class="input-file" id="imageUploadButton" type="file" accept="image/*,video/*">
+                <label class="mat-label" for="imageUploadButton" matRipple>
+                    <mat-icon class="mat-icon">upload</mat-icon><span class="span">Image/Video</span>
+                </label>
+            </mat-card>
+        </div>
+        <div class="col-sm-4 r2c2">
+            <mat-form-field class="mat-form-field">
+                <mat-label class="mat-label">Description</mat-label>
+                <textarea name="" id="" rows="13" class="textarea" matInput></textarea>
+                <mat-hint align="end">0 / 256</mat-hint>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row r3">
+        <div class="col-sm-11 r3c1">
+            <button class="mat-raised-button" mat-raised-button>Add Page</button>
+        </div>
+    </div>
+</div>
